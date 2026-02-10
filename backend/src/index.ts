@@ -27,7 +27,7 @@ app.post("/api/v1/signup",  async (c) => {
     }
   })
 
-  const token = sign({id : user.id}, "secret")
+  const token = await sign({id : user.id}, "secret")
 
   return c.json({
     jswt : token
